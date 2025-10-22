@@ -56,7 +56,7 @@ function draw() {
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(32);
-    text("Kast din hånd helt foran mit lækre kamera\n Åben og Luk den for at se hvad der venter sig", width / 2, height / 2 - 40);
+    text("Kast din hånd helt foran mit lækre kamera\n \n Åben og Luk den for at se hvad der venter sig \n", width / 2, height / 2 - 40);
     return; // stopper her indtil man har startet
   }
 
@@ -64,15 +64,15 @@ function draw() {
   background(0);
 
   if (label === "No hands") {
-    background(0, 255, 0);
+    background(100, 255, 40);
     lyd1.setVolume(0);
     lyd2.setVolume(0);
   } else if (label === "Closed hands") {
-    background(255, 0, 0);
+    background(255, 80, 20);
     lyd1.setVolume(1);
     lyd2.setVolume(0);
   } else if (label === "Open hands") {
-    background(0, 0, 255);
+    background(130, 90, 255);
     lyd1.setVolume(0);
     lyd2.setVolume(1);
   }
