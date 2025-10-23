@@ -1,22 +1,20 @@
-// Add some header info
-// For TM template code
 
 // Video
 let video;
-let label = 'waiting...';
-let lyd1,lyd2;
+let label = "waiting...";
+let lyd1, lyd2;
 let classifier;
 let uiBox, startBtn;
 let started = false;
 
 // STEP 1: Load the model!
 function preload() {
-    classifier = ml5.imageClassifier(
-      "https://teachablemachine.withgoogle.com/models/q_e6knNyN/model.json"
-    );
-    //soundFormats('wav');
-    lyd1 = loadSound ('/audio/lyd1.wav');
-    lyd2 = loadSound("/audio/lyd2.wav");
+  classifier = ml5.imageClassifier(
+    "https://teachablemachine.withgoogle.com/models/q_e6knNyN/model.json"
+  );
+  //soundFormats('wav');
+  lyd1 = loadSound("/audio/lyd1.wav");
+  lyd2 = loadSound("/audio/lyd2.wav");
 }
 
 function setup() {
@@ -45,8 +43,8 @@ function startExperience() {
 }
 
 // STEP 2 classify!
-function classifyVideo(){
-    classifier.classify(video, gotResults);
+function classifyVideo() {
+  classifier.classify(video, gotResults);
 }
 
 function draw() {
@@ -56,7 +54,11 @@ function draw() {
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(32);
-    text("Kast din hånd helt foran mit lækre kamera\n \n Åben og Luk den for at se hvad der venter sig \n", width / 2, height / 2 - 40);
+    text(
+      "Skru op for lyd \n \n Kast din hånd helt foran mit lækre kamera\n \n Åben og Luk den for at se hvad der venter sig \n",
+      width / 2,
+      height / 2 - 40
+    );
     return; // stopper her indtil man har startet
   }
 
